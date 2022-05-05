@@ -12,7 +12,7 @@ POST `/api/lists` - Create a list with name.
 
 GET `/api/lists` - Get all lists with tasks.
 
-DELETE `/api/list/:listId` - Delete a list, together with the tasks available.
+DELETE `/api/list/:listId` - Delete a list with all its tasks.
 
 POST `/api/tasks` - Create a task of a list.
 
