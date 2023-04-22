@@ -25,6 +25,5 @@ DELETE `/api/tasks/` - Delete multiple tasks from a list.
 PUT `/api/tasks/complete` - Update task status of complete or incomplete. 
 
 ## How to run the project
-1. `npm install --global yarn`
-2. `yarn install`
-3. `yarn dev`
+1. `npm install && npm install --only=dev`
+3. `npm run dev`
