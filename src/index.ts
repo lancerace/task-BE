@@ -12,15 +12,15 @@ const server = express()
     .use(cors());
 
 server.listen(process.env.PORT || 4200, async () => {
-    logger.info(`Server started at PORT ${process.env.PORT} in ${process.env.NODE_ENV}`);
+    logger.info(`Server started at PORT ${process.env.PORT} in ${process.env.NODE_ENV}. version ${process.env.npm_package_version}`);
 
-    DataSource.initialize()
+    /* DataSource.initialize()
         .then(() => {
             logger.info("Data Source has been initialized!")
         })
         .catch((err) => {
             logger.error("Error during Data Source initialization", err)
-        })
+        })*/
 })
 
 
