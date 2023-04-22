@@ -15,13 +15,22 @@ server.listen(process.env.PORT || 4200, async () => {
     logger.info(`Server started at PORT ${process.env.PORT} in ${process.env.NODE_ENV}`);
 
     DataSource.initialize()
-    .then(() => {
-        logger.info("Data Source has been initialized!")
-    })
-    .catch((err) => {
-        logger.error("Error during Data Source initialization", err)
-    })
+        .then(() => {
+            logger.info("Data Source has been initialized!")
+        })
+        .catch((err) => {
+            logger.error("Error during Data Source initialization", err)
+        })
 })
+
+
+server.get('/healthcheck', async (req, res) => {
+    try {
+        return res.json({ message: "healthy", success: true });
+    } catch (err) {
+        res.status(500).send({ message: 'Unhealthy', details: err, success: false });
+    }
+});
 
 server.use("/api", MainController);
 
